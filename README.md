@@ -2,6 +2,7 @@
 using rust to rebuild OOM
 
 ## Structure
+```
 room/
 ├── src/
 │   ├── main.rs
@@ -36,7 +37,7 @@ room/
 ├── examples/                # 使用示例
 ├── Cargo.toml
 └── README.md
-
+```
 ## Main improvements
 1. Lazy loading of environment variables
 Implementation
@@ -112,7 +113,7 @@ Type safety improvement:
    // 改进后
    fn kill_process(pid: ProcessId) -> Result<()>
 ```
-错误处理增强：
+Error handling enhancement:
 ```Rust
    #[derive(Debug, thiserror::Error)]
    pub enum SystemError {
