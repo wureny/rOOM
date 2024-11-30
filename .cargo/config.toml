@@ -1,0 +1,9 @@
+[target.x86_64-unknown-linux-musl]
+linker = "x86_64-linux-musl-gcc"
+rustflags = [
+    "-C", "link-arg=-L/usr/local/x86_64-linux-musl/lib",
+]
+
+[build]
+# 如果要在 macOS 上进行本地开发测试
+target = "x86_64-apple-darwin" 
