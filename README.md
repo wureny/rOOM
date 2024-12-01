@@ -5,36 +5,21 @@ using rust to rebuild OOM
 ```
 room/
 ├── src/
-│   ├── main.rs
+│   ├── lib.rs
 │   ├── oom/
-│   │   ├── mod.rs           # OOM模块入口
+│   │   ├── pressure.rs      # 内存压力测试
 │   │   ├── killer.rs        # OOM Killer核心逻辑
-│   │   ├── score.rs         # 进程评分系统
-│   │   └── policy.rs        # OOM策略定义
+│   │   ├── selector.rs      # 进程选择
+│   │   └── score.rs         # 进程评分系统
 │   ├── linux/
-│   │   ├── mod.rs           # Linux接口模块入口
-│   │   ├── syscall.rs       # 系统调用接口
-│   │   ├── proc.rs          # /proc文件系统接口
-│   │   └── sysinfo.rs       # 系统信息接口
+│   │   ├── proc_stat.rs     #进程信息统计
+│   │   ├── proc.rs          #proc文件系统接口
 │   ├── ffi/
 │   │   ├── mod.rs           # FFI模块入口
 │   │   ├── bindings.rs      # 自动生成的C绑定
 │   │   ├── safe_wrapper.rs  # 安全封装层
 │   │   └── types.rs         # FFI类型转换
-│   ├── env/
-│   │   ├── mod.rs           # 环境配置模块入口
-│   │   ├── lazy.rs          # 懒加载实现
-│   │   └── config.rs        # 配置管理
-│   └── utils/
-│       ├── mod.rs           # 工具模块入口
-│       ├── memory.rs        # 内存相关工具
-│       └── error.rs         # 错误处理
-├── build.rs                 # 构建脚本（用于生成FFI绑定）
-├── tests/
-│   ├── integration_tests/
-│   └── unit_tests/
-├── benches/                 # 性能测试
-├── examples/                # 使用示例
+├── build.rs                 # 构建脚本（用于生成FFI绑定
 ├── Cargo.toml
 └── README.md
 ```
